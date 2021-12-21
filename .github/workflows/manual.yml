@@ -36,4 +36,4 @@ jobs:
           echo "Chair: ${{ github.event.inputs.chair }}"
           echo "just: ${{ github.event.inputs.just }}"
           echo "env: ${{ github.event.inputs.envs }}"
-          echo "supers=$SUPER_SECRET"
+          echo "supers=${SUPER_SECRET:1}"
