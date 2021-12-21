@@ -9,10 +9,23 @@ on:
       tags:
         description: 'Test scenario tags'
         required: false
+      choice:
+        description: 'Choose chair'
+        required: false
+        type: choice
+        options:
+          - Piki
+          - Ne piki
+      just:
+        description: 'Just do it'
+        required: false
+        type: boolean
 jobs:
   printInputs:
     runs-on: ubuntu-latest
     steps:
       - run: |
           echo "Log level: ${{ github.event.inputs.logLevel }}"
-          echo "Tags: ${{ github.event.inputs.tags }}
+          echo "Tags: ${{ github.event.inputs.tags }}"
+          echo "Chair: ${{ github.event.inputs.chair }}"
+          echo "just: ${{ github.event.inputs.just }}"
