@@ -28,9 +28,12 @@ jobs:
   printInputs:
     runs-on: ubuntu-latest
     steps:
-      - run: |
+      - env:
+          SUPER_SECRET: ${{ secrets.MY_SECRET }}
+        run: |
           echo "Log level: ${{ github.event.inputs.logLevel }}"
           echo "Tags: ${{ github.event.inputs.tags }}"
           echo "Chair: ${{ github.event.inputs.chair }}"
           echo "just: ${{ github.event.inputs.just }}"
           echo "env: ${{ github.event.inputs.envs }}"
+          echo "supers=$SUPER_SECRET"
