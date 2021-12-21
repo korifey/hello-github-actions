@@ -9,7 +9,7 @@ on:
       tags:
         description: 'Test scenario tags'
         required: false
-      choice:
+      chair:
         description: 'Choose chair'
         required: false
         type: choice
@@ -20,6 +20,10 @@ on:
         description: 'Just do it'
         required: false
         type: boolean
+      env:
+        description: 'Environment'
+        type: environment
+        required: true
 jobs:
   printInputs:
     runs-on: ubuntu-latest
@@ -29,3 +33,4 @@ jobs:
           echo "Tags: ${{ github.event.inputs.tags }}"
           echo "Chair: ${{ github.event.inputs.chair }}"
           echo "just: ${{ github.event.inputs.just }}"
+          echo "env: ${{ github.event.inputs.envs }}"
